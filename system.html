@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+<header >
+    <nav id="navbar" class="navbar navbar-expand-lg position-fixed w-100 top-0" style="background-color: white; border-bottom:2px solid black; " >
+        <div class="container-fluid" >
+            <a class="navbar-brand" href="#" id="navBarName">
+                <h1>Customers</h1>
+            </a>
+            <div id="Time"> </div>
+<!--            <button id="menu_btn" type="button" class="btn btn-info">-->
+<!--                <span class="navbar-toggler-icon"></span>-->
+<!--            </button>-->
+        </div>
+    </nav>
+</header>
+<main>
+<aside id="sidebar" class="position-fixed top-0 bottom-0 margin-auto">
+<!--    <div class="d-flex justify-content-between p-4">-->
+<!--        <div class="sidebar-logo">-->
+<!--            <A href="">ABC</A>-->
+<!--        </div>-->
+<!--        <button class="toggle-btn border-0" type="button">-->
+    <div class="d-flex flex-column flex-shrink-0 bg-light" style="width: 5rem;">
+        <a href="/" class="d-block p-3 link-dark text-decoration-none" title="Icon-only " data-bs-toggle="tooltip" data-bs-placement="right" id="logo">
+<!--            <svg class="bi" width="40" height="50"><use xlink:href="#bootstrap"/>-->
+<!--            </svg>-->
+<!--            <span class="visually-hidden">Icon-only</span>-->
+        </a>
+        <ul class="nav nav-flush flex-column mb-auto text-center"  id="dashboardBtn">
+            <li class="nav-item">
+                <div id="dashboard" class="nav-link active py-3 border-bottom" aria-current="page" title="Home" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <div class="homeIcon">
+                        <i id="homeIcon" class="fa-solid fa-house"></i>
+                    </div>
+<!--                    <svg id="home" class="bi" width="24" height="50"  aria-label="Home">-->
+<!--                        <i id="homeIcon" class="fa-solid fa-house" style="color: rgb(99, 230, 190);"></i>-->
+<!--                    </svg>-->
+                </div>
+            </li>
+            <li>
+                <div id="Customer" class="nav-link py-3 border-bottom" title="Customer" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <div class="homeIcon">
+                        <i id="homeIcon02" class="fa-solid fa-user" ></i>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div id="item" class="nav-link py-3 border-bottom" title="Items" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <div class="homeIcon">
+                        <i id="homeIcon03" class="fa-solid fa-cart-plus"></i>
+                    </div>
+
+                </div>
+            </li>
+            <li>
+                <div id="placeOrder" class="nav-link py-3 border-bottom" title="Place Order" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <div class="homeIcon">
+                        <i id="homeIcon04" class="fa-solid fa-bag-shopping"></i>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div id="orderHistory" class="nav-link py-3 border-bottom" title="Order History" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <div class="homeIcon">
+                        <i id="homeIcon05" class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="dropdown border-top">
+            <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="index.html">Sign out</a></li>
+            </ul>
+        </div>
+    </div>
+
+</aside>
+    <section id="content" class="p-5">
+        <div class="container ">
+            <div class="row justify-content-between " id="card">
+                <div class="col-5 d-flex cardTag " >
+                    <div class="CusIcon"><i class="fa-solid fa-user" style="color: rgb(99, 230, 190);"></i></div>
+                    <div>
+                        <div class="circle"></div>
+                        <h3 id="cusCount">0</h3>
+                        <h3>Total Customers</h3>
+                    </div>
+                </div>
+                <div class="col-5  d-flex cardTag">
+                    <div class="CusIcon"><i class="fa-solid fa-check fa-beat-fade" style="color: rgb(99, 230, 190);"></i></div>
+                    <div>
+                        <div class="circle"></div>
+                        <h3>12</h3>
+                        <h3>Happy Customers</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <div class="customerDetails">
+           <div class="addSide">
+               <div class="col-4">
+                   <input  id="searchCustomer"  type="text" class="form-control" placeholder="Search Customer By PhoneNumber">
+
+               </div>
+               <button id="addCustomerBtn">+Add Customers</button>
+           </div>
+           <!--        <div class="mb-3">-->
+           <!--            <input type="text" class="form-control" placeholder="Search Customer By PhoneNumber">-->
+           <!--        </div>-->
+           <form class="w-50 m-auto" id="form">
+               <div class="mb-3">
+                   <label for="customer_id_input" class="form-label">id</label>
+                   <input type="number" class="form-control" id="customer_id_input" placeholder="enter id">
+               </div>
+               <div class="mb-3">
+                   <label for="customer_name_input" class="form-label">Name</label>
+                   <input type="text" class="form-control" id="customer_name_input">
+               </div>
+               <div class="mb-3">
+                   <label for="customer_nic_input" class="form-label">NIC</label>
+                   <input type="text" class="form-control" id="customer_nic_input">
+               </div>
+               <div class="mb-3">
+                   <label for="customer_phone_input" class="form-label">Phone</label>
+                   <input type="text" class="form-control" id="customer_phone_input">
+               </div>
+               <div class="mb-3">
+                   <label for="customer_address_input" class="form-label">Address</label>
+                   <textarea class="form-control" id="customer_address_input" style="height: 100px"></textarea>
+               </div>
+               <div class="text-end">
+                   <button type="button" class="btn btn-success" id="savebtn">Save</button>
+                   <button type="button" class="btn btn-primary" id="updateBtn">Update</button>
+                   <button type="reset" class="btn btn-info" id="resetButton">Reset</button>
+               </div>
+           </form>
+           <div class="table-responsive">
+               <table class="table  table-striped customerTable">
+                   <thead class="tHead">
+                   <tr>
+                       <th scope="col">#ID</th>
+                       <th scope="col">Name</th>
+                       <th scope="col">NIC</th>
+                       <th scope="col">Phone</th>
+                       <th scope="col">Address</th>
+                       <th scope="col">Action</th>
+                   </tr>
+                   </thead>
+                   <tbody id="customerTbody">
+                   <tr>
+                       <td>1</td>
+                       <td>pasindu</td>
+                       <td>200533202706</td>
+                       <td>0767221818</td>
+                       <td>kaluthara</td>
+                       <td><button class="btnDelete"><i class="fa-solid fa-xmark" style="color: rgb(99, 230, 190);"></i></button></td>
+                   </tr>
+
+
+                   </tbody>
+               </table>
+           </div>
+       </div>
+
+    </section>
+    <section id="content02" class="p-5">
+        <div class="container ">
+            <div class="row justify-content-between " id="card">
+                <div class="col-5 d-flex cardTag " >
+                    <div class="CusIcon"><i class="fa-solid fa-cart-plus" style="color: rgb(99, 230, 190);"></i></div>
+                    <div>
+                        <div class="circle"></div>
+                        <h3 id="itmCount">0</h3>
+                        <h3>Total Items</h3>
+                    </div>
+                </div>
+                <div class="col-5  d-flex cardTag">
+                    <div class="CusIcon"><i class="fa-solid fa-check fa-beat-fade" style="color: rgb(99, 230, 190);"></i></div>
+                    <div>
+                        <div class="circle"></div>
+                        <h3>12</h3>
+                        <h3>Best Items</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <div class="itemDetails">
+           <div class="addSide">
+
+               <div class="col-4">
+                   <input id="searchItem" type="text" class="form-control" placeholder="Search Item By ItemName">
+               </div>
+               <button id="addItemBtn">+Add Item</button>
+           </div>
+
+           <form class="w-50 m-auto" id="form02">
+               <div class="mb-3">
+                   <label for="item_id_input" class="form-label">id</label>
+                   <input type="number" class="form-control" id="item_id_input" placeholder="enter id">
+               </div>
+               <div class="mb-3">
+                   <label for="item_name_input" class="form-label">Item Name</label>
+                   <input type="text" class="form-control" id="item_name_input">
+               </div>
+               <div class="mb-3">
+                   <label for="item-unit-price" class="form-label">Unit Price</label>
+                   <input type="text" class="form-control" id="item-unit-price">
+               </div>
+               <div class="mb-3">
+                   <label for="item-qty" class="form-label">quantity</label>
+                   <input type="text" class="form-control" id="item-qty">
+               </div>
+               <div class="text-end">
+                   <button type="button" class="btn btn-success" id="itemSavebtn">Save</button>
+                   <button type="button" class="btn btn-primary" id="itemUpdateBtn">Update</button>
+                   <button type="reset" class="btn btn-info" id="itemResetButton">Reset</button>
+               </div>
+           </form>
+           <div class="table-responsive">
+               <table class="table table-striped">
+                   <thead>
+                   <tr>
+                       <th scope="col">#ID</th>
+                       <th scope="col">Item Name</th>
+                       <th scope="col">Unit Price</th>
+                       <th scope="col">Quantity</th>
+                       <th scope="col">Action</th>
+                   </tr>
+                   </thead>
+                   <tbody id="itemTbody">
+                   <tr>
+                       <td>1</td>
+                       <td>Mango Juice</td>
+                       <td>250.00</td>
+                       <td>5</td>
+                   </tr>
+
+
+                   </tbody>
+               </table>
+           </div>
+       </div>
+
+    </section>
+    <section id="content03" class="p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 order-1 order-md-1" id="first">
+                    <div class="col"  >
+                        <h4>Customer Details</h4>
+                        <div class="mb-3">
+                            <label for="cus_phone_input" class="form-label">Enter Customer Phone number</label>
+                            <input type="text" class="form-control" id="cus_phone_input" placeholder="phone Number">
+                            <label for="cus_name_input" class="form-label">Customer Name</label>
+                            <input type="text" class="form-control" id="cus_name_input" placeholder="Customer Name">
+                            <label for="cus_nic_input" class="form-label">Customer Nic</label>
+                            <input type="text" class="form-control" id="cus_nic_input" placeholder="Customer Nic">
+                        </div>
+
+                    </div>
+                    <div class="col" id="itemContainer">
+                        <h4>item Details</h4>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 order-3 order-md-2 itemPart" id="placeOrderDiv"  >
+                    <h4>Place Order</h4>
+                    <div class="row" id="placeItemDt">
+<!--                        <div>-->
+<!--                            <span>a</span>-->
+<!--                            <span>a</span>-->
+<!--                            <span>a</span>-->
+<!--                        </div>-->
+<!--                        <div>-->
+<!--                            <span>a</span>-->
+<!--                            <span>a</span>-->
+<!--                            <span>a</span>-->
+<!--                        </div>-->
+                    </div>
+                  <div class="placeItemsDt">
+                      <div id="totalPriceDiv" >
+                          <h3>Total Price : </h3>
+                          <h3 class="priceValue"></h3>
+                      </div><div id="discountDiv">
+                      <h3>discount : 200.00</h3>
+                      <h3></h3>
+                  </div>
+                      <div id="taxDiv">
+                          <h3>Tax(5%) : </h3>
+                          <h3 class="taxValue"></h3>
+                      </div>
+                      <div id="totDiv">
+                          <h3>Total : </h3>
+                          <h3 class="finalTot"></h3>
+                      </div>
+                      <button id="orderPlaceBtn">Place Order</button>
+                  </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <section id="content04" class="p-5">
+        <div class="table-responsive">
+            <table class="table table-striped customerTable">
+                <thead>
+                <tr>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Unit Price</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+                </thead>
+                <tbody id="orderHistoryTbody">
+                <tr>
+                    <td>Pasindu</td>
+                    <td>Mango</td>
+                    <td>350.00</td>
+                    <td>10</td>
+                </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section id="content05" class="p-5">
+        <div class="container text-center">
+
+            <div class="row justify-content-center align-items-center" id="cards"
+                 style="background-color:rgba(124,111,247,0.33); padding: 10px; border-radius: 1em">
+
+                <div class="col-auto" >
+                    <div class="card d-flex justify-content-center align-items-center"
+                         style="max-width: 18rem; height: 18rem; margin: 10px">
+
+                        <div class="iconDash">
+                            <i class="fa-solid fa-user" style="color: rgb(99, 230, 190);"></i>
+                        </div>
+
+                        <div class="card-body text-center">
+                            <div id="TotCusCount" class="count">0</div>
+                            <div class="AvlTag">Available Total Customer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="card d-flex justify-content-center align-items-center"
+                         style="max-width: 18rem; height: 18rem; margin: 10px">
+
+                        <div class="iconDash">
+                            <i class="fa-solid fa-cart-plus" style="color: rgb(99, 230, 190);"></i>
+                        </div>
+
+                        <div class="card-body text-center">
+                            <div id="TotItmCount" class="count">0</div>
+                            <div class="AvlTag">Available Total Items</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-auto">
+                    <div class="card d-flex justify-content-center align-items-center"
+                         style="max-width: 18rem; height: 18rem; margin: 10px">
+
+                        <div class="iconDash">
+                            <i class="fa-solid fa-user" style="color: rgb(99, 230, 190);"></i>
+                        </div>
+
+                        <div class="card-body text-center">
+                            <div class="count">10</div>
+                            <div class="AvlTag">Total Happy Customer</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="module" src="controller/customerController.js"></script>
+<script type="module" src="controller/itemController.js"></script>
+<script type="module" src="controller/dashboard.js"></script>
+<script type="module" src="controller/placeOrderController.js"></script>
+<script type="module" src="controller/OrderHistoryController.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
