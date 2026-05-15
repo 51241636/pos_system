@@ -6,7 +6,7 @@ import {findCustomerPhone} from "../model/customerModel.js"
 
 // import {addOrderHistoryDetails} from "OrderHistoryController,js";
 
-
+// place order class
 class placeOrder{
     #CustomerName
     #ItemName
@@ -44,6 +44,7 @@ class placeOrder{
         this.#itemQty=itemQty;
     }
 }
+// items load
 function loadItems() {
 
     $('#itemContainer').empty();
@@ -121,6 +122,7 @@ $(document).on('click', '.itemBox', function () {
     console.log("Price:", price);
 
 });
+// increase item qty  for place
 $(document).on('click', '.increase', function () {
     let qtyElement= $(this).siblings('.itemQty');
 
@@ -130,6 +132,7 @@ $(document).on('click', '.increase', function () {
     qtyElement.text(value);
 
 });
+// decrease item qty  for place
 $(document).on('click', '.decrease', function () {
     let qtyElement= $(this).siblings('.itemQty');
 
@@ -141,7 +144,7 @@ $(document).on('click', '.decrease', function () {
     qtyElement.text(value);
 
 });
-
+// customer details get
 $('#cus_phone_input').on('keypress', function(e) {
     if (e.which === 13) {
         $('#cus_name_input').val("");
@@ -162,6 +165,7 @@ $('#cus_phone_input').on('keypress', function(e) {
         }
     }
 })
+// order place
 $('#orderPlaceBtn').on('click',()=> {
     let cusName=$('#cus_name_input').val();
     console.log(cusName)
@@ -179,6 +183,7 @@ $('#orderPlaceBtn').on('click',()=> {
         addOrderHistoryDetails();
     }
 });
+// placed order add for the order history
 const addOrderHistoryDetails=()=>{
     $('#orderHistoryTbody').empty();
     placeOrderArray.map((item, index)=>{
