@@ -64,6 +64,14 @@ $('#orderHistory').on('click', function (){
 
 
 })
+$('#logOutBtn').on('click',()=>{
+
+        // localStorage.clear();
+
+    window.location.replace("index.html")
+
+
+});
 function runTime(){
     let getDate=new Date();
     let change=getDate.toLocaleString();

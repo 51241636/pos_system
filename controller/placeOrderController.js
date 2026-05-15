@@ -54,7 +54,7 @@ function loadItems() {
         <div  class="item-card text-center m-2 p-2 " id="itemCard" >
             
             <p>${item.name}</p>
-            <p>Rs. ${item.unitPrice}.00</p>
+            <p>Rs. ${item.unitPrice}</p>
 
             <div style="width: 80px; height: 50px; margin: 0 auto">
                 <button class="decrease">-</button>
@@ -64,6 +64,7 @@ function loadItems() {
             <div>
             <button class="itemBox" data-name="${item.name}"
      data-price="${item.unitPrice}">get</button>
+     <div class="imageAdd"></div>
 </div>
 
         </div>
@@ -217,6 +218,7 @@ const addOrderHistoryDetails=()=>{
     $('.taxValue').empty();
     $('.finalTot').empty();
     placeOrderItemArray.length=0;
+
     itemTotPrice=0;
 }
 export {loadItems}

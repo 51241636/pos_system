@@ -12,6 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
+<!--header-->
 <header >
     <nav id="navbar" class="navbar navbar-expand-lg position-fixed w-100 top-0" style="background-color: white; border-bottom:2px solid black; " >
         <div class="container-fluid" >
@@ -19,24 +20,15 @@
                 <h1>Customers</h1>
             </a>
             <div id="Time"> </div>
-<!--            <button id="menu_btn" type="button" class="btn btn-info">-->
-<!--                <span class="navbar-toggler-icon"></span>-->
-<!--            </button>-->
         </div>
     </nav>
 </header>
 <main>
+<!--    side bar-->
 <aside id="sidebar" class="position-fixed top-0 bottom-0 margin-auto">
-<!--    <div class="d-flex justify-content-between p-4">-->
-<!--        <div class="sidebar-logo">-->
-<!--            <A href="">ABC</A>-->
-<!--        </div>-->
-<!--        <button class="toggle-btn border-0" type="button">-->
+
     <div class="d-flex flex-column flex-shrink-0 bg-light" style="width: 5rem;">
         <a href="/" class="d-block p-3 link-dark text-decoration-none" title="Icon-only " data-bs-toggle="tooltip" data-bs-placement="right" id="logo">
-<!--            <svg class="bi" width="40" height="50"><use xlink:href="#bootstrap"/>-->
-<!--            </svg>-->
-<!--            <span class="visually-hidden">Icon-only</span>-->
         </a>
         <ul class="nav nav-flush flex-column mb-auto text-center"  id="dashboardBtn">
             <li class="nav-item">
@@ -44,9 +36,6 @@
                     <div class="homeIcon">
                         <i id="homeIcon" class="fa-solid fa-house"></i>
                     </div>
-<!--                    <svg id="home" class="bi" width="24" height="50"  aria-label="Home">-->
-<!--                        <i id="homeIcon" class="fa-solid fa-house" style="color: rgb(99, 230, 190);"></i>-->
-<!--                    </svg>-->
                 </div>
             </li>
             <li>
@@ -85,7 +74,7 @@
             </a>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="index.html">Sign out</a></li>
+                <li><a class="dropdown-item" id="logOutBtn" href="#">Sign out</a></li>
             </ul>
         </div>
     </div>
@@ -282,16 +271,7 @@
                 <div class="col-12 col-md-6 order-3 order-md-2 itemPart" id="placeOrderDiv"  >
                     <h4>Place Order</h4>
                     <div class="row" id="placeItemDt">
-<!--                        <div>-->
-<!--                            <span>a</span>-->
-<!--                            <span>a</span>-->
-<!--                            <span>a</span>-->
-<!--                        </div>-->
-<!--                        <div>-->
-<!--                            <span>a</span>-->
-<!--                            <span>a</span>-->
-<!--                            <span>a</span>-->
-<!--                        </div>-->
+
                     </div>
                   <div class="placeItemsDt">
                       <div id="totalPriceDiv" >
@@ -345,11 +325,10 @@
         <div class="container text-center">
 
             <div class="row justify-content-center align-items-center" id="cards"
-                 style="background-color:rgba(124,111,247,0.33); padding: 10px; border-radius: 1em">
+                 style="background-color:#262645; padding: 20px; border-radius: 1em">
 
-                <div class="col-auto" >
-                    <div class="card d-flex justify-content-center align-items-center"
-                         style="max-width: 18rem; height: 18rem; margin: 10px">
+                <div class="col-auto cards" >
+                    <div class="card d-flex justify-content-center align-items-center cardDT">
 
                         <div class="iconDash">
                             <i class="fa-solid fa-user" style="color: rgb(99, 230, 190);"></i>
@@ -361,15 +340,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-auto">
-                    <div class="card d-flex justify-content-center align-items-center"
+                <div class="col-auto cards">
+                    <div class="card d-flex justify-content-center align-items-center cardDT"
                          style="max-width: 18rem; height: 18rem; margin: 10px">
 
                         <div class="iconDash">
                             <i class="fa-solid fa-cart-plus" style="color: rgb(99, 230, 190);"></i>
                         </div>
 
-                        <div class="card-body text-center">
+                        <div class="card-body text-center ">
                             <div id="TotItmCount" class="count">0</div>
                             <div class="AvlTag">Available Total Items</div>
                         </div>
@@ -377,8 +356,8 @@
                 </div>
 
 
-                <div class="col-auto">
-                    <div class="card d-flex justify-content-center align-items-center"
+                <div class="col-auto cards">
+                    <div class="card d-flex justify-content-center align-items-center cardDT"
                          style="max-width: 18rem; height: 18rem; margin: 10px">
 
                         <div class="iconDash">
