@@ -15,6 +15,7 @@ document.getElementById('addCustomerBtn').addEventListener('click',function (){
         form_Oper=true;
     }
 })
+// customer save
 $('#savebtn').on('click',()=>{
     let id=$('#customer_id_input').val();
     let name=$('#customer_name_input').val();
@@ -66,6 +67,7 @@ $('#savebtn').on('click',()=>{
 
 
 })
+// customer load
 const addCustomerDetails=()=>{
     $('#customerTbody').empty();
     let cusArr=getCustomerArray();
@@ -105,6 +107,7 @@ $(document).on('click','#btnDelete',function (){
         addCustomerDetails()
         console.log(data);
 })
+// update
 $('#updateBtn').on('click',() => {
     let id=$('#customer_id_input').val();
     let name=$('#customer_name_input').val();
@@ -155,6 +158,7 @@ $('#updateBtn').on('click',() => {
     }
 
 });
+// search Customer
 $('#searchCustomer').on('keypress', function(e) {
     if (e.which === 13) {
         let value=$('#searchCustomer').val();
@@ -177,6 +181,7 @@ $('#searchCustomer').on('keypress', function(e) {
         }
     }
 });
+// clear form
 function clearForm(){
     $('#resetButton').click();
 }
