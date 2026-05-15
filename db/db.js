@@ -1,3 +1,4 @@
+// manage arrays
 let customerArray =[];
 let itemArray =[];
 let placeOrderItemArray =[];
