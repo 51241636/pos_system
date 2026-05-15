@@ -1,4 +1,5 @@
 import {getUserName,getUserPassword} from "../model/loginModel.js";
+// check user nam and password is crrect and log to the system
 
 document.getElementById('loginBtn').addEventListener('click',()=>{
     let currentEmail=document.getElementById('form2Example11').value;
