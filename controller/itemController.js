@@ -14,6 +14,7 @@ document.getElementById('addItemBtn').addEventListener('click',function (){
         form_Oper=true;
     }
 })
+// item save
 $('#itemSavebtn').on('click',()=>{
     let id=$('#item_id_input').val();
     let name=$('#item_name_input').val();
@@ -69,6 +70,7 @@ $('#itemSavebtn').on('click',()=>{
 
 
 });
+// load item data
 
 const addItemDetails=()=>{
     $('#itemTbody').empty();
@@ -86,6 +88,7 @@ const addItemDetails=()=>{
 
     })
 }
+// click get data from table
 $('#itemTbody').on('click','tr',function (){
     document.getElementById('form02').style.display="block";
     let item_obj=getDataIndex($(this).index());
@@ -95,6 +98,7 @@ $('#itemTbody').on('click','tr',function (){
     $('#item-qty').val(item_obj.quantity);
 
 })
+// delete
 $(document).on('click','.btnDelete',function (){
     let row=$(this).closest('tr');
     let data=row.data('index');
@@ -102,6 +106,7 @@ $(document).on('click','.btnDelete',function (){
     itemDelete(itemDt)
     addItemDetails()
 })
+// update
 $('#itemUpdateBtn').on('click',() => {
     let id=$('#item_id_input').val();
     let name=$('#item_name_input').val();
@@ -155,6 +160,7 @@ $('#itemUpdateBtn').on('click',() => {
     }
 
 })
+// clear form
 function clearForm(){
     $('#itemResetButton').click();
 }
