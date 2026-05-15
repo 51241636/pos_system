@@ -1,5 +1,5 @@
 import {customerArray} from "../db/db.js"
-
+// customer class
 class Customer{
     #id
     #name
@@ -46,25 +46,31 @@ class Customer{
     }
 }
 
+// customer data add for the array
 const customerData=(id,name,nic,phone,address) =>{
     let customer=new Customer(id,name,nic,phone,address);
     customerArray.push(customer);
 }
+// return customer array
 const getCustomerArray=()=>{
     return customerArray;
 }
+// get customer object using it
 const getCustomerId=(id)=>{
     console.log(customerArray.find(item => item.id==id));
     return customerArray.find(item => item.id==id)
 
 }
+// remove customer from arrys
 const customerDelete=(obj_index) => {
     customerArray.splice(obj_index,1)
 
 }
+// get customer array using index
 const getDataIndex=(index)=> {
     return customerArray[index];
 }
+// customer data update
 const customerDataUpdate=(id,name,nic,phone,address)=>{
     let cus_obj=customerArray.find(item => item.id == id);
     cus_obj.id=id;
@@ -73,6 +79,7 @@ const customerDataUpdate=(id,name,nic,phone,address)=>{
     cus_obj.phone=phone;
     cus_obj.address=address;
 }
+// find customer using phone number
 const findCustomerPhone=(contactNumber)=>{
    return  customerArray.find(item => item.phone == contactNumber )
 }
