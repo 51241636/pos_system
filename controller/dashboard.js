@@ -6,12 +6,13 @@ $('#content03').hide();
 $('#content04').hide();
 $('#content05').show();
 
-
+// nav bar active deactive
 $('#navBarName').text("Dashboard");
 $('ul').on('click', 'li', function () {
     $(this).closest('ul').find('li').removeClass('active');
     $(this).addClass('active');
 });
+// dashboard content show
 $('#dashboard').on('click', function (){
     $('#content05').show();
     $('#navBarName').text("Dashboard");
@@ -25,6 +26,7 @@ $('#dashboard').on('click', function (){
     $('#TotItmCount').append(itemArray.length);
     // $('#content02').hide();
 });
+// customer content show
 $('#Customer').on('click', function (){
     $('#content').show();
     $('#navBarName').text("Customers Manage");
@@ -34,6 +36,7 @@ $('#Customer').on('click', function (){
     $('#content05').css({display:'none'});
     // $('#content02').hide();
 });
+// item content show
 $('#item').on('click', function (){
     $('#content').hide();
     $('#content03').hide();
@@ -44,6 +47,7 @@ $('#item').on('click', function (){
 
 
 })
+// place order content show
 $('#placeOrder').on('click', function (){
     $('#content').hide();
     $('#content02').hide();
@@ -54,6 +58,7 @@ $('#placeOrder').on('click', function (){
 
 
 })
+// orderhistpory content show
 $('#orderHistory').on('click', function (){
     $('#content').hide();
     $('#content02').hide();
@@ -64,6 +69,7 @@ $('#orderHistory').on('click', function (){
 
 
 })
+// logout the system
 $('#logOutBtn').on('click',()=>{
 
         // localStorage.clear();
