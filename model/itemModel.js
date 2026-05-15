@@ -1,5 +1,5 @@
 import {itemArray} from "../db/db.js"
-
+// item class
 class Item{
     #id
     #name
@@ -37,29 +37,35 @@ class Item{
         this.#quantity=quantity;
     }
 }
-
+//item add for the array
 const itemData=(id,name,unitPrice,quantity) =>{
     let item=new Item(id,name,unitPrice,quantity);
     itemArray.push(item);
 }
+// gt the items
 const getItemArray=()=>{
     return itemArray;
 }
+// find some items using id
 const getItemId=(id)=>{
     return itemArray.find(item => item.id==id)
 
 }
+// find item using name
 const getItemName=(name)=>{
     return itemArray.find(item =>   item.name.toLowerCase().trim() === name.toLowerCase().trim())
 
 }
+// item remove
 const itemDelete=(obj_index) => {
     itemArray.splice(obj_index,1)
 
 }
+// get data using index
 const getDataIndex=(index)=> {
     return itemArray[index];
 }
+// item data update
 const itemDataUpdate=(id,name,unitPrice,quantity)=>{
     let item_obj=itemArray.find(item => item.id == id);
     console.log(item_obj);
