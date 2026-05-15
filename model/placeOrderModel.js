@@ -1,5 +1,5 @@
 import {placeOrderItemArray} from "../db/db.js";
-
+// place order class
 class placeOrderItems{
     #name
     #unitPrice
@@ -29,9 +29,11 @@ class placeOrderItems{
         this.#qty=qty;
     }
 }
+// add palce order item
 const addPlaceOrderItems=(name,totalPrice,qty)=>{
     return new placeOrderItems(name,totalPrice,qty);
 }
+// add place order items to the array
 const addPlaceOrderItemsArr=(placeOd)=>{
     placeOrderItemArray.push(placeOd);
 }
